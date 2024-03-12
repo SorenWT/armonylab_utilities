@@ -1,0 +1,3 @@
+FROM seancook/openpose-cpu:latest
+
+COPY Downloads/openpose/models/pose models/pose
