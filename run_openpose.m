@@ -20,10 +20,11 @@ end
 
 % script to fix the openpose issues
 
-oposecall = @(fldrin,fldrout) system(['sh ~/Desktop/armonylab/openpose_wrapper.sh ' fldrin ' ' fldrout]);
+oposecall = @(fldrin,fldrout) system(['sh ~/Desktop/armonylab/armonylab_utilities/openpose_wrapper.sh ' fldrin ' ' fldrout]);
 
 badfolders = [];
 
+%setenv('PATH','/Users/Soren/opt/anaconda3/bin:/Users/Soren/opt/anaconda3/condabin:/usr/local/fsl/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Library/Frameworks/Python.framework/Versions/3.5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/Apple/usr/bin:/Users/Soren/Library/Python/2.7/bin:/Users/Soren/abin:/Applications/workbench/bin_macosx64:/Users/Soren/.local/bin')
 setenv('PATH','/Users/Soren/opt/anaconda3/bin:/Users/Soren/opt/anaconda3/condabin:/usr/local/fsl/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Library/Frameworks/Python.framework/Versions/3.5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/Apple/usr/bin:/Users/Soren/Library/Python/2.7/bin:/Users/Soren/abin:/Applications/workbench/bin_macosx64:/Users/Soren/.local/bin')
 
 for i = 1:length(fldrlist)

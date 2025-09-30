@@ -10,9 +10,9 @@ switch cform.sex
     case {'item2','male','man','M','m','Male','Boy','boy'}
         cform.sex = 'M';
     otherwise
-        if any(contains(cform.sex,{'Female','Woman'},'IgnoreCase',true))
+        if any(contains(cform.sex,{'Female','Woman','fem'},'IgnoreCase',true))
             cform.sex = 'F';
-        elseif any(contains(cform.sex,{'Male','Man'},'IgnoreCase',true))
+        elseif any(contains(cform.sex,{'Male','Man','masc'},'IgnoreCase',true))
             cform.sex = 'M';
         else
             cform.sex = 'O';
@@ -20,12 +20,18 @@ switch cform.sex
 end
 
 switch cform.gender
-    case 'item1'
+    case {'item1','female','woman','F','f','Female','girl','Girl'}
         cform.gender = 'F';
-    case 'item2'
+    case {'item2','male','man','M','m','Male','Boy','boy'}
         cform.gender = 'M';
     otherwise
-        cform.gender = 'O';
+        if any(contains(cform.gender,{'Female','Woman'},'IgnoreCase',true))
+            cform.sex = 'F';
+        elseif any(contains(cform.gender,{'Male','Man'},'IgnoreCase',true))
+            cform.sex = 'M';
+        else
+            cform.sex = 'O';
+        end
 end
 
 if ischar(cform.handedness)
