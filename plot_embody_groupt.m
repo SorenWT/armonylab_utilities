@@ -1,4 +1,4 @@
-function [tdata,alldata,tID,allemos] = plot_embody_groupt(subs,field,thesesubs,p,pindx,tdata)
+function [tdata,alldata,tID,allemos] = plot_embody_groupt(subs,thesesubs,field,p,pindx,tdata)
 
 if nargin < 4 || isempty(p)
     figure
@@ -6,11 +6,11 @@ if nargin < 4 || isempty(p)
     pindx = {};
 end
 
-if nargin < 2
+if nargin < 3
     field = 'bodymap';
 end
 
-if nargin < 3
+if nargin < 2
     thesesubs = 1:length(subs);
 end
 
