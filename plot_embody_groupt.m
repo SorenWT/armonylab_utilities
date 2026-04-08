@@ -1,4 +1,4 @@
-function [tdata,alldata,tID,allemos] = plot_embody_groupt(subs,thesesubs,field,p,pindx,tdata)
+function [tdata,alldata,tID,allemos] = plot_embody_groupt(subs,field,thesesubs,p,pindx,tdata)
 
 if nargin < 4 || isempty(p)
     figure
@@ -6,8 +6,12 @@ if nargin < 4 || isempty(p)
     pindx = {};
 end
 
-if nargin < 3
+if nargin < 2
     field = 'bodymap';
+end
+
+if nargin < 3
+    thesesubs = 1:length(subs);
 end
 
 nemos = length(subs{1}.embody.emotion);
